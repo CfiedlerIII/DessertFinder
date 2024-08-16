@@ -18,6 +18,7 @@
 		1D6A934F2C6EC73500B60611 /* MealDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A934E2C6EC73500B60611 /* MealDataModel.swift */; };
 		1D6A93512C6ED29A00B60611 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93502C6ED29A00B60611 /* NetworkingService.swift */; };
 		1D6A93542C6FE30100B60611 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93532C6FE30100B60611 /* DessertViewModel.swift */; };
+		1D6A93562C6FFA0F00B60611 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93552C6FFA0F00B60611 /* MealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1D6A934E2C6EC73500B60611 /* MealDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataModel.swift; sourceTree = "<group>"; };
 		1D6A93502C6ED29A00B60611 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		1D6A93532C6FE30100B60611 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
+		1D6A93552C6FFA0F00B60611 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6A93362C6EB80600B60611 /* FetchMealsApp.swift */,
+				1D6A93552C6FFA0F00B60611 /* MealView.swift */,
 				1D6A93522C6FE2E100B60611 /* DessertFetcher */,
 				1D6A93442C6EBF7F00B60611 /* Networking */,
 				1D6A933A2C6EB81100B60611 /* Assets.xcassets */,
@@ -191,6 +194,7 @@
 				1D6A93372C6EB80600B60611 /* FetchMealsApp.swift in Sources */,
 				1D6A934D2C6EC68300B60611 /* MealsServiceExtensions.swift in Sources */,
 				1D6A93462C6EBF9100B60611 /* NetworkHost.swift in Sources */,
+				1D6A93562C6FFA0F00B60611 /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

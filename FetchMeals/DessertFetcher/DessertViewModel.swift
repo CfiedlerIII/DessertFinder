@@ -19,11 +19,8 @@ class DessertViewModel: ObservableObject {
     self.mealService.fetchAllInCategory("Dessert") { result in
       switch result {
       case .success(let foundMeals):
-        print("Success!")
-        print("\(foundMeals)")
         self.meals = foundMeals
       case .failure(let error):
-        print("Failure...")
         print("\(error.localizedDescription)")
       }
     }
