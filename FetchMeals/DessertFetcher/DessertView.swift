@@ -19,7 +19,8 @@ struct DessertView: View {
       })
       List {
         ForEach(viewModel.meals, id: \.id) { meal in
-          Text(meal.name)
+          MealView(mealData: meal)
+            .listRowSeparator(.hidden)
         }
       }
     }
