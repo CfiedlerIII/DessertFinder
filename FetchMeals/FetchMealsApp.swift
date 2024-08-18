@@ -11,7 +11,7 @@ import SwiftUI
 struct FetchMealsApp: App {
     var body: some Scene {
         WindowGroup {
-          DessertView(viewModel: DessertViewModel(mealService: MealsService(serviceType: .remote)))
+          FetchMealsHomeView()
         }
     }
 }
