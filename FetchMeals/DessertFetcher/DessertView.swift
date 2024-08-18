@@ -21,24 +21,21 @@ struct DessertView: View {
             } label: {
               MealPreview(mealData: meal)
             }
-              .listRowSeparator(.hidden)
-              .listRowBackground(Color.clear)
-              .buttonStyle(.plain)
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+          }
+          if searchResults.isEmpty {
+            HStack {
+              Spacer()
+              Text("No Results...")
+              Spacer()
+            }
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
           }
         }
         .navigationTitle("Dessert Finder")
         .searchable(text: $searchText)
-        .listStyle(PlainListStyle())
-        .background(
-          Color(
-            UIColor(
-              red: 0.85,
-              green: 0.85,
-              blue: 0.85,
-              alpha: 1.0
-            )
-          )
-        )
         .clipShape(RoundedRectangle(cornerRadius: 15.0))
         .padding()
       }
@@ -55,7 +52,7 @@ struct DessertView: View {
       if !filteredMeals.isEmpty {
         return filteredMeals
       }
-      return [MealDataModel(id: "0000", name: "No Results", thumbnail: "")]
+      return []
     }
   }
 }
