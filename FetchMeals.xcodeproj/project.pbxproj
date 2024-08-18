@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6A93362C6EB80600B60611 /* FetchMealsApp.swift */,
-				1D6A93552C6FFA0F00B60611 /* MealPreview.swift */,
 				1D6A93522C6FE2E100B60611 /* DessertFetcher */,
 				1D6A93442C6EBF7F00B60611 /* Networking */,
 				1D6A933A2C6EB81100B60611 /* Assets.xcassets */,
@@ -112,6 +111,7 @@
 		1D6A93522C6FE2E100B60611 /* DessertFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				1D6A93552C6FFA0F00B60611 /* MealPreview.swift */,
 				1D6A93382C6EB80600B60611 /* DessertView.swift */,
 				1D6A93532C6FE30100B60611 /* DessertViewModel.swift */,
 			);
