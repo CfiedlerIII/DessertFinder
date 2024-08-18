@@ -14,11 +14,6 @@ struct DessertView: View {
   var body: some View {
     NavigationStack {
       VStack {
-        Button(action: {
-          viewModel.fetchDesserts()
-        }, label: {
-          Text("Fetch Desserts")
-        })
         List {
           ForEach(searchResults, id: \.id) { meal in
             NavigationLink {
@@ -31,7 +26,7 @@ struct DessertView: View {
               .buttonStyle(.plain)
           }
         }
-        .navigationTitle("Desserts")
+        .navigationTitle("Dessert Finder")
         .searchable(text: $searchText)
         .listStyle(PlainListStyle())
         .background(
@@ -52,15 +47,13 @@ struct DessertView: View {
 
   var searchResults: [MealDataModel] {
     if searchText.isEmpty {
-      return viewModel.meals.sorted(by: { $0.name < $1.name
-      })
+      return viewModel.meals
     } else {
       let filteredMeals = viewModel.meals.filter {
-        $0.name.contains(searchText)
+        $0.name.lowercased().contains(searchText.lowercased())
       }
       if !filteredMeals.isEmpty {
-        return filteredMeals.sorted(by: { $0.name < $1.name
-        })
+        return filteredMeals
       }
       return [MealDataModel(id: "0000", name: "No Results", thumbnail: "")]
     }
