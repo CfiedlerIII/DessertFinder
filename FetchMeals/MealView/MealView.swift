@@ -46,9 +46,19 @@ struct MealView: View {
                       Text("\(instrLine)")
                         .font(.subheadline)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.bottom], 8)
+
                     }
                   }
                 }
+                AsyncImage(url: URL(string: viewModel.meal?.thumbnail ?? "")) { image in
+                  image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                  Color.gray
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 15.0))
                 Spacer()
               }
               .padding()
