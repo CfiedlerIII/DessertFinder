@@ -20,7 +20,12 @@ struct DessertView: View {
           List {
             ForEach(searchResults, id: \.id) { meal in
               NavigationLink {
-                MealView(meal: meal)
+                MealView(
+                  viewModel: .init(
+                    mealPreviewModel: meal,
+                    mealService: viewModel.mealService
+                  )
+                )
               } label: {
                 MealPreview(mealData: meal)
               }
@@ -46,7 +51,7 @@ struct DessertView: View {
     }
   }
 
-  var searchResults: [MealDataModel] {
+  var searchResults: [MealPreviewModel] {
     if searchText.isEmpty {
       return viewModel.meals
     } else {

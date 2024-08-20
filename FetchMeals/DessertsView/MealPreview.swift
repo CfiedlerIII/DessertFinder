@@ -10,7 +10,7 @@ import SwiftUI
 struct MealPreview: View {
   private let cornerRadius = 15.0
 
-  var mealData: MealDataModel
+  var mealData: MealPreviewModel
 
   var body: some View {
     VStack(alignment: .center) {
