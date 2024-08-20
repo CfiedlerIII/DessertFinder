@@ -129,16 +129,18 @@ struct MealDataModel: Decodable {
           print("Failed to generate index from CodingKey.")
           return
         }
-        let ingredient = try dynamicContainer.decode(String.self, forKey: key)
-        ingredientArray[index-1] = ingredient
+        if let ingredient = try dynamicContainer.decodeIfPresent(String.self, forKey: key) {
+          ingredientArray[index-1] = ingredient
+        }
       } else if key.stringValue.contains("strMeasure") {
         let indexString = key.stringValue.replacingOccurrences(of: "strMeasure", with: "")
         guard let index = Int(indexString) else {
           print("Failed to generate index from CodingKey.")
           return
         }
-        let measurement = try dynamicContainer.decode(String.self, forKey: key)
-        measureArray[index-1] = measurement
+        if let measurement = try dynamicContainer.decodeIfPresent(String.self, forKey: key) {
+          measureArray[index-1] = measurement
+        }
       }
     }
     let ingredientTuples: [IngredientModel] = Array(zip(ingredientArray,measureArray))
