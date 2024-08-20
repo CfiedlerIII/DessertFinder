@@ -16,7 +16,7 @@ extension MealsService {
       self.networkingService = service
     }
 
-    func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealDataModel, NetworkError>) -> Void) {
+    func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealRecipeWrapper, NetworkError>) -> Void) {
       let host = NetworkHost.mealAPI(NetworkHost.ActiveScheme).host
       let urlString = "\(host)1/lookup.php?i=\(mealID)"
 
@@ -38,13 +38,13 @@ extension MealsService {
       )
 
       networkingService.executeRequest(
-        MealDataModel.self,
+        MealRecipeWrapper.self,
         urlRequest: request,
         completion: completion
       )
     }
     
-    func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealDataWrapper, NetworkError>) -> Void) {
+    func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealPreviewWrapper, NetworkError>) -> Void) {
       let host = NetworkHost.mealAPI(NetworkHost.ActiveScheme).host
       let urlString = "\(host)1/filter.php?c=\(mealCategory)"
 
@@ -66,7 +66,7 @@ extension MealsService {
       )
 
       networkingService.executeRequest(
-        MealDataWrapper.self,
+        MealPreviewWrapper.self,
         urlRequest: request,
         completion: completion
       )
@@ -74,24 +74,28 @@ extension MealsService {
   }
 
   class MockService: MealServiceable {
-    func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealDataModel, NetworkError>) -> Void) {
-      completion(.success(MealDataModel(id: "0001", name: "Stew", thumbnail: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")))
+    func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealRecipeWrapper, NetworkError>) -> Void) {
+      let meals = [
+        MealDataModel(id: "0001", name: "Stew", thumbnail: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
+      ]
+      let mealWrapper = MealRecipeWrapper(meals: meals)
+      completion(.success(mealWrapper))
     }
 
-    func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealDataWrapper, NetworkError>) -> Void) {
+    func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealPreviewWrapper, NetworkError>) -> Void) {
       let meals = [
-        MealDataModel(
+        MealPreviewModel(
           id: "53049",
           name: "Apam balik",
           thumbnail: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg"
         ),
-        MealDataModel(
+        MealPreviewModel(
           id: "52893",
           name: "Apple & Blackberry Crumble",
           thumbnail: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg"
         )
       ]
-      let mealWrapper = MealDataWrapper(meals: meals)
+      let mealWrapper = MealPreviewWrapper(meals: meals)
       completion(.success(mealWrapper))
     }
   }

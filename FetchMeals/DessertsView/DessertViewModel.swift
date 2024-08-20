@@ -8,23 +8,26 @@
 import Foundation
 
 class DessertViewModel: ObservableObject {
-  private var mealService: MealsService
-  @Published var meals: [MealDataModel] = []
+  var mealService: MealsService
+  @Published var meals: [MealPreviewModel] = []
+  @Published var isLoading: Bool = true
 
   init(mealService: MealsService = MealsService(serviceType: .remote)) {
     self.mealService = mealService
+    self.fetchDesserts()
   }
 
   func fetchDesserts() {
+    isLoading = true
     self.mealService.fetchAllInCategory("Dessert") { result in
       switch result {
       case .success(let foundMeals):
-        print("Success!")
-        print("\(foundMeals)")
-        self.meals = foundMeals
+        self.meals = foundMeals.sorted(by: { $0.name < $1.name
+        })
+        self.isLoading = false
       case .failure(let error):
-        print("Failure...")
         print("\(error.localizedDescription)")
+        self.isLoading = false
       }
     }
   }
