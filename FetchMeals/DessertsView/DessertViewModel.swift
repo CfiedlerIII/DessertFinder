@@ -8,8 +8,8 @@
 import Foundation
 
 class DessertViewModel: ObservableObject {
-  private var mealService: MealsService
-  @Published var meals: [MealDataModel] = []
+  var mealService: MealsService
+  @Published var meals: [MealPreviewModel] = []
   @Published var isLoading: Bool = true
 
   init(mealService: MealsService = MealsService(serviceType: .remote)) {

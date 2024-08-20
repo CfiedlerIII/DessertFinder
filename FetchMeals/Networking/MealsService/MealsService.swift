@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MealServiceable {
-  func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealDataModel,NetworkError>) -> Void)
-  func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealDataWrapper,NetworkError>) -> Void)
+  func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealRecipeWrapper,NetworkError>) -> Void)
+  func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealPreviewWrapper,NetworkError>) -> Void)
 }
 
 class MealsService {
@@ -30,11 +30,22 @@ class MealsService {
     }
   }
 
-//  func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealDataModel,NetworkError>) -> Void) {
-//
-//  }
+  func fetchMealUsingID(_ mealID: String, completion: @escaping (Result<MealDataModel,NetworkError>) -> Void) {
+    activeService.fetchMealUsingID(mealID) { result in
+      switch result {
+      case .success(let mealWrapper):
+        guard let meal = mealWrapper.meals.first else {
+          print("Failed to fetch first matching meal.")
+          return
+        }
+        completion(.success(meal))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
 
-  func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<[MealDataModel],NetworkError>) -> Void) {
+  func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<[MealPreviewModel],NetworkError>) -> Void) {
     activeService.fetchAllInCategory(mealCategory) { result in
       switch result {
       case .success(let mealWrapper):

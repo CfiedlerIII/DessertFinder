@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D3A390E2C71C37B00724252 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A390D2C71C37B00724252 /* MealView.swift */; };
+		1D3A39102C73B30600724252 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A390F2C73B30600724252 /* MealViewModel.swift */; };
 		1D6A93372C6EB80600B60611 /* FetchMealsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93362C6EB80600B60611 /* FetchMealsApp.swift */; };
 		1D6A93392C6EB80600B60611 /* DessertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93382C6EB80600B60611 /* DessertView.swift */; };
 		1D6A933B2C6EB81100B60611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A933A2C6EB81100B60611 /* Assets.xcassets */; };
@@ -16,7 +17,7 @@
 		1D6A93482C6EC10600B60611 /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93472C6EC10600B60611 /* MealsService.swift */; };
 		1D6A934A2C6EC15A00B60611 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93492C6EC15A00B60611 /* NetworkErrors.swift */; };
 		1D6A934D2C6EC68300B60611 /* MealsServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A934C2C6EC68300B60611 /* MealsServiceExtensions.swift */; };
-		1D6A934F2C6EC73500B60611 /* MealDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A934E2C6EC73500B60611 /* MealDataModel.swift */; };
+		1D6A934F2C6EC73500B60611 /* MealDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A934E2C6EC73500B60611 /* MealDataModels.swift */; };
 		1D6A93512C6ED29A00B60611 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93502C6ED29A00B60611 /* NetworkingService.swift */; };
 		1D6A93542C6FE30100B60611 /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93532C6FE30100B60611 /* DessertViewModel.swift */; };
 		1D6A93562C6FFA0F00B60611 /* MealPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A93552C6FFA0F00B60611 /* MealPreview.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		1D3A390D2C71C37B00724252 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		1D3A390F2C73B30600724252 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		1D6A93332C6EB80600B60611 /* FetchMeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchMeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6A93362C6EB80600B60611 /* FetchMealsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMealsApp.swift; sourceTree = "<group>"; };
 		1D6A93382C6EB80600B60611 /* DessertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertView.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		1D6A93472C6EC10600B60611 /* MealsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
 		1D6A93492C6EC15A00B60611 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		1D6A934C2C6EC68300B60611 /* MealsServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsServiceExtensions.swift; sourceTree = "<group>"; };
-		1D6A934E2C6EC73500B60611 /* MealDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataModel.swift; sourceTree = "<group>"; };
+		1D6A934E2C6EC73500B60611 /* MealDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataModels.swift; sourceTree = "<group>"; };
 		1D6A93502C6ED29A00B60611 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		1D6A93532C6FE30100B60611 /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
 		1D6A93552C6FFA0F00B60611 /* MealPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPreview.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				1D3A390D2C71C37B00724252 /* MealView.swift */,
+				1D3A390F2C73B30600724252 /* MealViewModel.swift */,
 			);
 			path = MealView;
 			sourceTree = "<group>";
@@ -80,12 +83,12 @@
 			isa = PBXGroup;
 			children = (
 				1D6A93362C6EB80600B60611 /* FetchMealsApp.swift */,
+				1D6A93572C71B64000B60611 /* FetchMealsHome.swift */,
 				1D6A93522C6FE2E100B60611 /* DessertsView */,
 				1D3A390C2C71C36D00724252 /* MealView */,
 				1D6A93442C6EBF7F00B60611 /* Networking */,
 				1D6A933A2C6EB81100B60611 /* Assets.xcassets */,
 				1D6A933C2C6EB81100B60611 /* Preview Content */,
-				1D6A93572C71B64000B60611 /* FetchMealsHome.swift */,
 			);
 			path = FetchMeals;
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 			children = (
 				1D6A93472C6EC10600B60611 /* MealsService.swift */,
 				1D6A934C2C6EC68300B60611 /* MealsServiceExtensions.swift */,
-				1D6A934E2C6EC73500B60611 /* MealDataModel.swift */,
+				1D6A934E2C6EC73500B60611 /* MealDataModels.swift */,
 			);
 			path = MealsService;
 			sourceTree = "<group>";
@@ -201,9 +204,10 @@
 			files = (
 				1D6A93482C6EC10600B60611 /* MealsService.swift in Sources */,
 				1D6A93392C6EB80600B60611 /* DessertView.swift in Sources */,
+				1D3A39102C73B30600724252 /* MealViewModel.swift in Sources */,
 				1D6A934A2C6EC15A00B60611 /* NetworkErrors.swift in Sources */,
 				1D6A93512C6ED29A00B60611 /* NetworkingService.swift in Sources */,
-				1D6A934F2C6EC73500B60611 /* MealDataModel.swift in Sources */,
+				1D6A934F2C6EC73500B60611 /* MealDataModels.swift in Sources */,
 				1D6A93542C6FE30100B60611 /* DessertViewModel.swift in Sources */,
 				1D6A93582C71B64000B60611 /* FetchMealsHome.swift in Sources */,
 				1D6A93372C6EB80600B60611 /* FetchMealsApp.swift in Sources */,
