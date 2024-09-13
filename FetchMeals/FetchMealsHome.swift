@@ -18,7 +18,7 @@ struct FetchMealsHomeView: View {
           Text("Find Meal by ID")
         }
         NavigationLink {
-          DessertView(viewModel: DessertViewModel(mealService: MealsService(serviceType: .remote)))
+          DessertView(viewModel: DessertViewModel(mealsAsyncService: MealsAsyncService(serviceType: .remote)))
         } label: {
           Text("Dessert Finder")
         }

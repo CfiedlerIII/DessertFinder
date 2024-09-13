@@ -12,13 +12,13 @@ protocol MealServiceable {
   func fetchAllInCategory(_ mealCategory: String, completion: @escaping (Result<MealPreviewWrapper,NetworkError>) -> Void)
 }
 
-class MealsService {
-  enum DataServiceType {
-    case remote
-    case mock
-    //case offline
-  }
+enum DataServiceType {
+  case remote
+  case mock
+  //case offline
+}
 
+class MealsService {
   let activeService: MealServiceable
 
   init(serviceType: DataServiceType = .remote) {

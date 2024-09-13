@@ -23,7 +23,7 @@ struct DessertView: View {
                 MealView(
                   viewModel: .init(
                     mealPreviewModel: meal,
-                    mealService: viewModel.mealService
+                    mealsAsyncService: viewModel.mealsAsyncService
                   )
                 )
               } label: {
@@ -67,5 +67,5 @@ struct DessertView: View {
 }
 
 #Preview {
-  DessertView(viewModel: DessertViewModel(mealService: MealsService(serviceType: .mock)))
+  DessertView(viewModel: DessertViewModel(mealsAsyncService: MealsAsyncService(serviceType: .mock)))
 }

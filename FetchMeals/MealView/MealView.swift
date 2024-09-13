@@ -98,7 +98,7 @@ struct MealView: View {
         name: "Apple & Blackberry Crumble",
         thumbnail: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg"
       ),
-      mealService: MealsService(serviceType: .mock)
+      mealsAsyncService: MealsAsyncService(serviceType: .mock)
     )
   )
 }

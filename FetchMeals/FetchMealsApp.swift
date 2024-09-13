@@ -13,7 +13,7 @@ struct FetchMealsApp: App {
         WindowGroup {
           DessertView(
             viewModel: DessertViewModel(
-              mealService: MealsService(serviceType: .remote)
+              mealsAsyncService: MealsAsyncService(serviceType: .remote)
             )
           )
         }
